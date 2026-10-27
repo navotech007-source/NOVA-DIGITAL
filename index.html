@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="AIIMGowolKAMvpmIOPojuPx2XLfIUHbQML1KCjd5BOk" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nova Digital makes simple websites for businesses.">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="data:,">
+  <title>Nova Digital | Websites That Grow Your Business</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1020; --bg2:#10172a; --card:#131b2e; --card2:#151d33;
+      --line:#263047; --line2:#29334a; --text:#f8fafc; --muted:#b8c1d5; --muted2:#aeb8cc;
+      --violet:#8b5cf6; --violet-dark:#7c3aed; --violet-light:#a78bfa; --violet-soft:#c4b5fd;
+      --radius:16px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:"Manrope",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+    a{text-decoration:none;color:inherit}
+    a:focus-visible,.button:focus-visible{outline:2px solid var(--violet-light);outline-offset:3px}
+    .container{width:min(1100px,92%);margin:0 auto}
+    /* Header */
+    header{position:sticky;top:0;z-index:20;background:rgba(11,16,32,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .header-inner{padding:18px 0}
+    nav{display:flex;justify-content:space-between;align-items:center;gap:20px}
+    .logo{font-family:"Sora",sans-serif;font-size:25px;font-weight:800;letter-spacing:-.02em;color:var(--text)}
+    .logo em{font-style:normal;color:var(--violet-light)}
+    .nav-links{display:flex;gap:26px;flex-wrap:wrap;align-items:center;font-weight:600;font-size:15px;color:var(--muted)}
+    .nav-links a{padding:6px 2px}
+    .nav-links a:hover{color:var(--violet-light)}
+    .nav-cta{display:inline-flex;padding:9px 16px;background:var(--violet);color:#fff !important;border-radius:999px;font-weight:700}
+    .nav-cta:hover{background:var(--violet-dark);color:#fff !important}
+    /* Hero */
+    .hero{padding:92px 0 84px;text-align:center;position:relative;overflow:hidden;background:radial-gradient(ellipse 900px 480px at 50% -60px,#2e2766 0%,transparent 65%),var(--bg)}
+    .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 70% 60% at 50% 0%,black 30%,transparent 75%);pointer-events:none}
+    .hero .container{position:relative}
+    .tag{display:inline-block;color:var(--violet-soft);border:1px solid #55458a;background:rgba(139,92,246,.08);padding:7px 15px;border-radius:999px;margin-bottom:24px;font-size:13.5px;font-weight:700;letter-spacing:.02em}
+    h1,h2,h3{font-family:"Sora",sans-serif;letter-spacing:-.02em}
+    h1{font-size:clamp(38px,7vw,66px);line-height:1.08;font-weight:800;max-width:850px;margin:0 auto 22px}
+    h1 span{color:var(--violet-light)}
+    .hero p{max-width:620px;margin:0 auto 34px;color:var(--muted);font-size:18.5px;line-height:1.65}
+    .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;background:var(--violet);color:#fff;border-radius:10px;font-weight:800;font-size:15.5px;border:1px solid var(--violet);transition:transform .18s ease,background .18s ease,border-color .18s ease;cursor:pointer}
+    .button:hover{background:var(--violet-dark);border-color:var(--violet-dark);transform:translateY(-2px)}
+    .button-outline{background:transparent;border:1px solid #59627a;color:var(--text)}
+    .button-outline:hover{background:#202943;border-color:#59627a}
+    .hero-points{display:flex;gap:10px 28px;justify-content:center;flex-wrap:wrap;margin-top:38px;color:var(--muted2);font-size:14px;font-weight:600}
+    .hero-points span{display:inline-flex;align-items:center;gap:8px}
+    .hero-points i{width:7px;height:7px;border-radius:50%;background:var(--violet-light);display:inline-block;flex:none}
+    /* Browser mock */
+    .mock-wrap{max-width:860px;margin:54px auto 0;text-align:left}
+    .mock{border:1px solid #2e3a56;border-radius:14px;overflow:hidden;background:#0f1629;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+    .mock-bar{display:flex;align-items:center;gap:7px;padding:12px 14px;border-bottom:1px solid var(--line);background:#121a2f}
+    .dot{width:10px;height:10px;border-radius:50%}
+    .mock-url{margin-left:10px;flex:1;max-width:340px;background:#0b1020;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:12px;color:var(--muted2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .mock-body{padding:28px;display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}
+    .mock-kicker{font-size:11px;letter-spacing:.14em;font-weight:800;color:var(--violet-light);text-transform:uppercase;margin-bottom:10px}
+    .mock-body h3{font-size:26px;line-height:1.15;margin-bottom:10px}
+    .mock-body p{color:var(--muted);font-size:14.5px;margin-bottom:16px}
+    .mock-pill{display:inline-block;background:var(--violet);color:#fff;font-size:13px;font-weight:800;padding:9px 16px;border-radius:8px}
+    .mock-cards{display:grid;gap:10px}
+    .mock-card{border:1px solid var(--line2);background:var(--card);border-radius:10px;padding:14px}
+    .mock-card b{font-size:13.5px;display:block;margin-bottom:2px}
+    .mock-card span{font-size:12.5px;color:var(--muted)}
+    /* Sections */
+    section{padding:78px 0}
+    .section-heading{text-align:center;margin-bottom:42px;max-width:640px;margin-left:auto;margin-right:auto}
+    .section-heading .eyebrow{font-size:12px;letter-spacing:.16em;font-weight:800;text-transform:uppercase;color:var(--violet-light);margin-bottom:10px}
+    .section-heading h2{font-size:clamp(28px,4vw,36px);line-height:1.15;margin-bottom:10px;font-weight:700}
+    .section-heading p{color:var(--muted2);font-size:16.5px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .card{padding:28px;background:var(--card);border:1px solid var(--line2);border-radius:var(--radius);transition:transform .18s ease,border-color .18s ease}
+    .card:hover{transform:translateY(-5px);border-color:var(--violet)}
+    .icon-wrap{width:52px;height:52px;border-radius:12px;background:rgba(139,92,246,.14);border:1px solid rgba(167,139,250,.28);display:grid;place-items:center;margin-bottom:16px;color:var(--violet-light)}
+    .icon-wrap svg{width:26px;height:26px}
+    .card h3{margin-bottom:10px;font-size:20px;font-weight:700}
+    .card p{color:var(--muted);font-size:15px;line-height:1.65}
+    .card ul{list-style:none;margin-top:16px;display:grid;gap:8px}
+    .card ul li{font-size:14px;color:var(--muted);display:flex;gap:9px;align-items:flex-start}
+    .card ul li::before{content:"✓";color:var(--violet-light);font-weight:800;flex:none}
+    /* Business types */
+    .business{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .business-cards{display:grid;grid-template-columns:repeat(6,1fr);gap:22px}
+    .business-cards .card{grid-column:span 2;display:flex;flex-direction:column}
+    .business-cards .card:nth-child(4),.business-cards .card:nth-child(5){grid-column:span 3}
+    .business-link{margin-top:auto;padding-top:20px;color:var(--violet-light);font-weight:800;font-size:15px}
+    .business-link:hover{text-decoration:underline;text-underline-offset:4px}
+    /* Pricing */
+    .pricing-cards{align-items:stretch}
+    .price-card{display:flex;flex-direction:column;position:relative}
+    .price-card.popular{border-color:var(--violet);background:linear-gradient(180deg,rgba(139,92,246,.10),transparent 55%),var(--card)}
+    .popular-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--violet);color:#fff;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:999px;white-space:nowrap}
+    .price-card .price{margin:6px 0 4px;font-family:"Sora",sans-serif}
+    .price-card .price .from{display:block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--violet-light)}
+    .price-card .price .amount{font-size:40px;font-weight:800;line-height:1.1;letter-spacing:-.02em}
+    .price-card ul{margin-bottom:26px}
+    .price-card .button{margin-top:auto;width:100%}
+    .care-plan{max-width:760px;margin:26px auto 0;text-align:center;padding:18px 22px;border:1px solid var(--line2);border-radius:12px;background:var(--card);color:var(--muted);font-size:15.5px}
+    .care-plan strong{color:var(--text)}
+    /* About */
+    .about{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:start}
+    .about-grid .section-heading{text-align:left;margin:0 0 6px;max-width:none}
+    .about-copy p{color:var(--muted);margin-top:14px;font-size:16.5px;line-height:1.7}
+    .about-list{display:grid;gap:14px}
+    .about-item{border:1px solid var(--line2);background:var(--card);border-radius:14px;padding:20px 22px}
+    .about-item b{display:block;font-family:"Sora",sans-serif;font-size:16px;margin-bottom:4px}
+    .about-item span{color:var(--muted);font-size:14.5px;line-height:1.6;display:block}
+    /* Projects */
+    .project-visual{height:132px;border-radius:10px;border:1px solid var(--line);margin-bottom:20px;overflow:hidden;position:relative;background:#0f1629}
+    .project-visual .bar{height:26px;border-bottom:1px solid var(--line);background:#121a2f;display:flex;align-items:center;gap:5px;padding:0 10px}
+    .project-visual .bar i{width:7px;height:7px;border-radius:50%;display:block}
+    .pv-lines{padding:14px 16px;display:grid;gap:8px}
+    .pv-line{height:9px;border-radius:99px;background:#2a3653}
+    .pv-line.v{background:var(--violet);opacity:.85}
+    .pv-line.short{width:55%}.pv-line.med{width:78%}
+    .pv-row{display:flex;gap:8px;margin-top:4px}
+    .pv-box{flex:1;height:34px;border-radius:6px;border:1px solid var(--line2);background:var(--card)}
+    .project-label{display:inline-block;color:var(--violet-soft);font-size:12px;font-weight:800;letter-spacing:.12em;margin-bottom:10px}
+    .project-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+    .project-tags span{font-size:12px;font-weight:700;color:var(--muted);border:1px solid var(--line2);padding:4px 10px;border-radius:999px}
+    /* Process strip */
+    .process{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:22px}
+    .step{text-align:left;padding:22px;border-top:2px solid var(--line2)}
+    .step b{font-family:"Sora",sans-serif;font-size:13px;color:var(--violet-light);letter-spacing:.1em;display:block;margin-bottom:8px}
+    .step h3{font-size:16.5px;margin-bottom:6px}
+    .step p{font-size:14px;color:var(--muted);line-height:1.6}
+    /* Contact */
+    .contact-box{max-width:760px;margin:0 auto;padding:46px 28px;background:radial-gradient(ellipse 500px 220px at 50% 0%,rgba(139,92,246,.22),transparent 70%),var(--card2);border:1px solid #303b54;border-radius:18px;text-align:center}
+    .contact-box h2{font-size:clamp(26px,4vw,34px);line-height:1.2}
+    .contact-box p{color:var(--muted);margin:14px auto 26px;max-width:480px;font-size:16.5px}
+    .contact-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;align-items:center}
+    .contact-note{margin-top:16px;font-size:13.5px;color:var(--muted2);text-align:center}
+    .contact-intro{text-align:left;margin-bottom:26px}
+    .contact-intro p{margin:10px 0 0;max-width:none}
+    .contact-form{text-align:left;display:grid;gap:16px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .form-field{display:grid;gap:7px;min-width:0}
+    .form-field label{font-size:14px;font-weight:700;color:var(--text)}
+    .form-field label span{color:var(--violet-light)}
+    .form-field input,.form-field textarea{width:100%;background:#0f1629;border:1px solid var(--line2);border-radius:10px;padding:14px 16px;color:var(--text);font:inherit;font-size:15.5px;line-height:1.5}
+    .form-field textarea{min-height:132px;resize:vertical}
+    .form-field input::placeholder,.form-field textarea::placeholder{color:#8a96b0}
+    .form-field input:focus,.form-field textarea:focus{outline:2px solid var(--violet-light);outline-offset:1px;border-color:var(--violet)}
+    .consent{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;color:var(--muted);line-height:1.55;cursor:pointer;text-align:left}
+    .consent input{width:19px;height:19px;flex:none;margin-top:2px;accent-color:var(--violet);cursor:pointer}
+    .send-btn{width:100%;padding:15px 26px;font-size:16px;border-radius:10px}
+    .form-divider{display:flex;align-items:center;gap:14px;margin:28px 0 18px;color:var(--muted2);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+    .form-divider::before,.form-divider::after{content:"";flex:1;height:1px;background:var(--line2)}
+    footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:var(--muted2);font-size:14px}
+    footer .foot-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:10px;font-weight:600}
+    footer .foot-links a:hover{color:var(--violet-light)}
+    @media (max-width:860px){
+      .about-grid{grid-template-columns:1fr}
+      .process{grid-template-columns:1fr 1fr}
+      .mock-body{grid-template-columns:1fr}
+      .business-cards{grid-template-columns:1fr 1fr}
+      .business-cards .card,.business-cards .card:nth-child(4),.business-cards .card:nth-child(5){grid-column:auto}
+      .business-cards .card:last-child{grid-column:1/-1}
+    }
+    @media (max-width:700px){
+      nav{flex-direction:column}
+      .nav-links{justify-content:center;gap:8px 18px}
+      .nav-cta{margin-top:2px}
+      .hero{padding:64px 0 60px}
+      .cards{grid-template-columns:1fr}
+      .business-cards{grid-template-columns:1fr}
+      .business-cards .card:last-child{grid-column:auto}
+      section{padding:60px 0}
+      .mock-body{padding:22px}
+      .process{grid-template-columns:1fr}
+      .hero-actions .button{width:100%}
+      .form-row{grid-template-columns:1fr}
+      .contact-box{padding:36px 20px}
+      .contact-actions .button{width:100%}
+    }
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *{transition:none !important}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <nav aria-label="Main navigation">
+        <a class="logo" href="#home">Nova Digital<em>.</em></a>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#for-business">For Business</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+          <a class="nav-cta" href="#contact">Start a Project</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <span class="tag">Creative Web Solutions</span>
+        <h1>Websites that help your business <span>grow online.</span></h1>
+        <p>We create clean, modern, and responsive websites that help businesses build trust and connect with more customers.</p>
+        <div class="hero-actions">
+          <a class="button" href="#contact">Let's Work Together</a>
+          <a class="button button-outline" href="#projects">View Projects</a>
+        </div>
+        <div class="hero-points" aria-label="Highlights">
+          <span><i></i> Responsive on every device</span>
+          <span><i></i> Clean, modern design</span>
+          <span><i></i> Built to win enquiries</span>
+        </div>
+
+        <div class="mock-wrap" aria-hidden="true">
+          <div class="mock">
+            <div class="mock-bar">
+              <span class="dot" style="background:#f87171"></span>
+              <span class="dot" style="background:#fbbf24"></span>
+              <span class="dot" style="background:#34d399"></span>
+              <span class="mock-url">yourbusiness.com</span>
+            </div>
+            <div class="mock-body">
+              <div>
+                <div class="mock-kicker">Your business, online</div>
+                <h3>A homepage that turns visitors into customers</h3>
+                <p>Clear headline, trusted look, and a contact button that's always easy to find.</p>
+                <span class="mock-pill">Get in Touch →</span>
+              </div>
+              <div class="mock-cards">
+                <div class="mock-card"><b>Fast &amp; mobile-first</b><span>Looks great on phones, tablets and desktops</span></div>
+                <div class="mock-card"><b>Easy to contact</b><span>Call, email and enquiry buttons up front</span></div>
+                <div class="mock-card"><b>Ready to grow</b><span>Add pages, products or booking later</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Services</div>
+          <h2>What We Do</h2>
+          <p>Simple websites for your business.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+            <h3>Website Development</h3>
+            <p>We build clean, fast websites for your business.</p>
+            <ul><li>For any business</li><li>Fast and clear</li><li>Easy to update</li></ul>
+          </article>
+          <article class="card">
+            <div class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="1"/><circle cx="17.5" cy="10.5" r="1"/><circle cx="8.5" cy="7.5" r="1"/><circle cx="6.5" cy="12.5" r="1"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div>
+            <h3>Web Design</h3>
+            <p>We make your business look good and trusted online.</p>
+            <ul><li>Your colours and style</li><li>Clean, clear pages</li><li>Builds trust fast</li></ul>
+          </article>
+          <article class="card">
+            <div class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div>
+            <h3>Mobile Responsive</h3>
+            <p>Your site works well on phones, tablets, and computers.</p>
+            <ul><li>Looks good on every screen</li><li>Easy buttons and menus</li><li>No side-scrolling</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="business" id="for-business">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">For Your Business</div>
+          <h2>Websites for Your Business</h2>
+          <p>Pick your business type. We build the right website for you.</p>
+        </div>
+        <div class="business-cards">
+          <article class="card">
+            <div class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+            <h3>Restaurants</h3>
+            <p>Show your menu, take reservations and orders online.</p>
+            <a class="business-link" href="#contact">Get this website →</a>
+          </article>
+          <article class="card">
+            <div class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 17.5 17.5"/><path d="m21 21-1-1"/><path d="m3 3 1 1"/><path d="m18 22 4-4"/><path d="m2 6 4-4"/><path d="m3 10 7-7"/><path d="m14 21 7-7"/></svg></div>
+            <h3>Gyms</h3>
+            <p>Show classes, trainers and membership plans.</p>
+            <a class="business-link" href="#contact">Get this website →</a>
+          </article>
+          <article class="card">
+            <div class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v16"/><path d="M2 21h20"/><path d="M9 7h1M14 7h1M9 11h1M14 11h1M9 15h1M14 15h1"/><path d="M10 21v-3h4v3"/></svg></div>
+            <h3>Hotels</h3>
+            <p>Show rooms, photos and booking enquiries.</p>
+            <a class="business-link" href="#contact">Get this website →</a>
+          </article>
+          <article class="card">
+            <div class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+            <h3>Real Estate</h3>
+            <p>Show property listings with photos and enquiry forms.</p>
+            <a class="business-link" href="#contact">Get this website →</a>
+          </article>
+          <article class="card">
+            <div class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.7-5h14.6L21 9"/><path d="M4 9v11a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9"/><path d="M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/><path d="M9 21v-6h6v6"/></svg></div>
+            <h3>And Others</h3>
+            <p>Any small business that needs a simple, professional website.</p>
+            <a class="business-link" href="#contact">Get this website →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Pricing</div>
+          <h2>Services &amp; Prices</h2>
+          <p>Starting prices only. Final price depends on your project. Contact us for a quote.</p>
+        </div>
+        <div class="cards pricing-cards">
+          <article class="card price-card">
+            <h3>Starter Website</h3>
+            <div class="price"><span class="from">From</span><span class="amount">$499</span></div>
+            <ul>
+              <li>1–3 pages</li>
+              <li>Works on mobile</li>
+              <li>Contact form</li>
+              <li>Basic SEO</li>
+            </ul>
+            <a class="button button-outline" href="#contact">Get Started</a>
+          </article>
+          <article class="card price-card popular">
+            <span class="popular-badge">Most Popular</span>
+            <h3>Business Website</h3>
+            <div class="price"><span class="from">From</span><span class="amount">$999</span></div>
+            <ul>
+              <li>Up to 6 pages</li>
+              <li>Custom design</li>
+              <li>Contact and booking forms</li>
+              <li>Maps and social links</li>
+              <li>Basic SEO</li>
+            </ul>
+            <a class="button" href="#contact">Get Started</a>
+          </article>
+          <article class="card price-card">
+            <h3>Premium Website</h3>
+            <div class="price"><span class="from">From</span><span class="amount">$1,999</span></div>
+            <ul>
+              <li>Online store or booking</li>
+              <li>Advanced SEO</li>
+              <li>Blog or portfolio</li>
+              <li>Priority support</li>
+            </ul>
+            <a class="button button-outline" href="#contact">Get Started</a>
+          </article>
+        </div>
+        <p class="care-plan"><strong>Monthly care plan</strong> from $99/month. We handle updates, backups, and small changes.</p>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-copy">
+            <div class="section-heading">
+              <div class="eyebrow">About</div>
+              <h2>About Nova Digital</h2>
+            </div>
+            <p>Every business needs a good website. We make websites that are simple, clear, and easy to use.</p>
+            <p>We build homepages, business sites, and portfolios. Every page is clear and easy to read.</p>
+          </div>
+          <div class="about-list">
+            <div class="about-item"><b>Simple and clear</b><span>Short words. Clear pages. Customers understand your site in seconds.</span></div>
+            <div class="about-item"><b>Easy to contact you</b><span>Clear buttons. Your phone and email are easy to find.</span></div>
+            <div class="about-item"><b>Ready to grow</b><span>Start small today. Add pages, products, or booking later.</span></div>
+          </div>
+        </div>
+
+        <div class="process" aria-label="How we work">
+          <div class="step"><b>01 — TALK</b><h3>Tell us about your business</h3><p>Tell us what you do and what you need.</p></div>
+          <div class="step"><b>02 — DESIGN</b><h3>See the design first</h3><p>We show you a clean design in your colours.</p></div>
+          <div class="step"><b>03 — BUILD</b><h3>We build your site</h3><p>It works on phones, tablets, and computers.</p></div>
+          <div class="step"><b>04 — LAUNCH</b><h3>Your site goes live</h3><p>Share your link and get new enquiries.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Portfolio</div>
+          <h2>Featured Projects</h2>
+          <p>Simple examples of our work.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="project-visual" aria-hidden="true"><div class="bar"><i style="background:#f87171"></i><i style="background:#fbbf24"></i><i style="background:#34d399"></i></div><div class="pv-lines"><div class="pv-line v short"></div><div class="pv-line med"></div><div class="pv-line"></div><div class="pv-row"><div class="pv-box"></div><div class="pv-box"></div><div class="pv-box"></div></div></div></div>
+            <span class="project-label">DEMO PROJECT 01</span>
+            <h3>Business Website</h3>
+            <p>A simple homepage for a small business.</p>
+            <div class="project-tags"><span>Homepage</span><span>Services</span><span>Contact</span></div>
+          </article>
+          <article class="card">
+            <div class="project-visual" aria-hidden="true"><div class="bar"><i style="background:#f87171"></i><i style="background:#fbbf24"></i><i style="background:#34d399"></i></div><div class="pv-lines"><div class="pv-line short"></div><div class="pv-line v med"></div><div class="pv-row"><div class="pv-box"></div><div class="pv-box"></div></div><div class="pv-line med"></div></div></div>
+            <span class="project-label">DEMO PROJECT 02</span>
+            <h3>Creative Portfolio</h3>
+            <p>A clean portfolio to show your work.</p>
+            <div class="project-tags"><span>Portfolio</span><span>Gallery</span><span>About</span></div>
+          </article>
+          <article class="card">
+            <div class="project-visual" aria-hidden="true"><div class="bar"><i style="background:#f87171"></i><i style="background:#fbbf24"></i><i style="background:#34d399"></i></div><div class="pv-lines"><div class="pv-line v med"></div><div class="pv-line"></div><div class="pv-line short"></div><div class="pv-row"><div class="pv-box"></div></div></div></div>
+            <span class="project-label">DEMO PROJECT 03</span>
+            <h3>Product Landing Page</h3>
+            <p>One page to show a product and get enquiries.</p>
+            <div class="project-tags"><span>Landing Page</span><span>Product</span><span>Enquiries</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="padding-top:20px">
+      <div class="container">
+        <div class="contact-box">
+          <div class="contact-intro">
+            <h2>Got a project in mind?</h2>
+            <p>We'd love to hear from you. Please, fill out this form.</p>
+          </div>
+          <form class="contact-form" id="contact-form" action="https://formsubmit.co/novatech007@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New website enquiry from Nova Digital">
+            <input type="hidden" name="_replyto" id="replyto-field" value="">
+            <input type="hidden" name="_template" value="table">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="first-name">First name <span aria-hidden="true">*</span></label>
+                <input id="first-name" name="First name" type="text" placeholder="First name" autocomplete="given-name" required>
+              </div>
+              <div class="form-field">
+                <label for="last-name">Last name <span aria-hidden="true">*</span></label>
+                <input id="last-name" name="Last name" type="text" placeholder="Last name" autocomplete="family-name" required>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="customer-email">Email <span aria-hidden="true">*</span></label>
+              <input id="customer-email" name="Email" type="email" placeholder="Email" autocomplete="email" required>
+            </div>
+            <div class="form-field">
+              <label for="customer-needs">About your needs <span aria-hidden="true">*</span></label>
+              <textarea id="customer-needs" name="About your needs" placeholder="About your needs" rows="5" required></textarea>
+            </div>
+            <label class="consent" for="consent-check">
+              <input id="consent-check" name="Consent" type="checkbox" value="I agree to let Nova Digital collect and process my personal data." required>
+              <span>I agree to let Nova Digital collect and process my personal data.</span>
+            </label>
+            <button class="button send-btn" type="submit">Send message</button>
+          </form>
+          <div class="form-divider"><span>Or contact us directly</span></div>
+          <div class="contact-actions">
+            <a class="button" href="mailto:novatech007@gmail.com?subject=Website%20Project%20Enquiry">Contact Us</a>
+            <a class="button button-outline" href="tel:+923146360220">Call +923146360220</a>
+          </div>
+          <div class="contact-note">Prefer to talk first? Email us or call us on <a href="tel:+923146360220" style="color:var(--violet-light);font-weight:700;text-decoration:underline;text-underline-offset:3px">+923146360220</a>.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="foot-links">
+        <a href="#services">Services</a><a href="#for-business">For Business</a><a href="#about">About</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+      </div>
+      <p>&copy; <span id="year"></span> Nova Digital. Portfolio demonstration project.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    (function(){
+      var form = document.getElementById("contact-form");
+      var email = document.getElementById("customer-email");
+      var replyto = document.getElementById("replyto-field");
+      if(form && email && replyto){
+        var sync = function(){ replyto.value = email.value; };
+        email.addEventListener("input", sync);
+        form.addEventListener("submit", sync);
+      }
+    })();
+  </script>
+</body>
+</html>
